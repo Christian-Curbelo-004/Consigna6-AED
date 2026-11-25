@@ -15,7 +15,7 @@ public final class GeneradorPadrones {
 
     private static final int BASE = 1_000_000;
 
-    private GeneradorPadrones() {
+    public GeneradorPadrones() {
     }
 
     public static int[] generar(Perfil perfil, int n, long semilla) {

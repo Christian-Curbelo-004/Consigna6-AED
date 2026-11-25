@@ -13,5 +13,5 @@ public enum Perfil {
     /** Solo 10 valores distintos, muy repetidos. */
     POCOS_DISTINTOS,
     /** Ordenado salvo el último 1 %, que está al azar (padrones agregados al final). */
-    ORDENADO_CON_COLA
+    ORDENADO_CON_COLA, 
 }
