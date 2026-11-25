@@ -1,0 +1,6 @@
+ALEATORIO: coincide, n=10000000
+ASCENDENTE: coincide, n=10000000
+DESCENDENTE: coincide, n=10000000
+TUBO_DE_ORGANO: no suministrado; se genera
+POCOS_DISTINTOS: no suministrado; se genera
+ORDENADO_CON_COLA: coincide, n=10000000
