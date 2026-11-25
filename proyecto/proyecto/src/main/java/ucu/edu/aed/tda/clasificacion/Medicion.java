@@ -21,6 +21,8 @@ import ucu.edu.aed.tda.clasificacion.datos.Perfil;
  *
  * Compilar: javac *.java      Ejecutar: java -Xmx2g Medicion
  */
+
+// utiliza esos algoritmos para medir su rendimiento
 public class Medicion {
 
     static final long LIMITE_MS = 30_000;
@@ -97,7 +99,7 @@ public class Medicion {
     }
 
     // ---------- O(n^2) ----------
-    static void insercion(int[] a) {
+    public static void insercion(int[] a) {
         for (int i = 1; i < a.length; i++) {
             int x = a[i], j = i - 1;
             while (j >= 0 && a[j] > x) { a[j + 1] = a[j]; j--; }
@@ -105,7 +107,7 @@ public class Medicion {
         }
     }
 
-    static void seleccion(int[] a) {
+    public static void seleccion(int[] a) {
         for (int i = 0; i < a.length - 1; i++) {
             int m = i;
             for (int j = i + 1; j < a.length; j++) if (a[j] < a[m]) m = j;
@@ -114,7 +116,7 @@ public class Medicion {
     }
 
     // ---------- Shellsort (huecos de Knuth) ----------
-    static void shell(int[] a) {
+    public static void shell(int[] a) {
         int h = 1;
         while (h < a.length / 3) h = 3 * h + 1;
         for (; h >= 1; h /= 3)
@@ -126,12 +128,12 @@ public class Medicion {
     }
 
     // ---------- Mergesort ----------
-    static void merge(int[] a) {
+    public static void merge(int[] a) {
         int[] aux = new int[a.length];
         mergeRec(a, aux, 0, a.length - 1);
     }
 
-    static void mergeRec(int[] a, int[] aux, int lo, int hi) {
+    public static void mergeRec(int[] a, int[] aux, int lo, int hi) {
         if (lo >= hi) return;
         int mid = (lo + hi) >>> 1;
         mergeRec(a, aux, lo, mid);
@@ -147,7 +149,7 @@ public class Medicion {
     }
 
     // ---------- Heapsort ----------
-    static void heap(int[] a) {
+    public static void heap(int[] a) {
         int n = a.length;
         for (int i = n / 2 - 1; i >= 0; i--) hundir(a, i, n);
         for (int fin = n - 1; fin > 0; fin--) {
@@ -177,7 +179,7 @@ public class Medicion {
         quickRec(a, 0, a.length - 1, ingenuo);
     }
 
-    static void quickRec(int[] a, int lo, int hi, boolean ingenuo) {
+    public static void quickRec(int[] a, int lo, int hi, boolean ingenuo) {
         while (lo < hi) {
             int corte; // la partición deja [lo, corte] y [corte+1, hi]
             if (ingenuo) {
